@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- below custom attributes are just examples from android docs -->
+<resources>
+    <declare-styleable name="GraphView">
+        <attr name="themeColor" format="integer" />
+        <attr name="title" format="string" />
+        <attr name="xAxisLabel" format="string" />
+    </declare-styleable>
+</resources>

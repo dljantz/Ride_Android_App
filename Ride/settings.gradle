@@ -1,0 +1,17 @@
+/*
+When I created a new android project and copied over
+all classes and resource files to resolve package name
+issues, the extra code below was added, which was not
+present in the first version of the app I created.
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+*/
+rootProject.name = "Ride"
+include ':app'

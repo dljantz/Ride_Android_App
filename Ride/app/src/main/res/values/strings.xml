@@ -1,0 +1,239 @@
+<resources>
+
+    <string name="app_name">Ride</string>
+    <string name="custom_dark_map_id">5ad4ac8a37b4bf0e</string>
+
+    <!-- Button text -->
+    <string name="record_new_ride_button">RECORD NEW RIDE</string>
+    <string name="view_saved_rides_button">VIEW PAST RIDES</string>
+    <string name="continue_recording_ride_button">BACK TO CURRENT RIDE</string>
+    <string name="start_button">START</string>
+    <string name="resume_button">RESUME</string>
+    <string name="stop_button">STOP</string>
+    <string name="finish_button">FINISH &amp; SAVE</string>
+    <string name="exit_view_ride_button">EXIT</string>
+    <string name="delete_ride_button">DELETE</string>
+    <string name="discard_ride_button_verification">ARE YOU SURE?</string>
+    <string name="autopause_button">Autopause</string>
+
+    <string name="dark_map_style_radio_button">\u0020\u0020Dark</string>
+    <string name="light_map_style_radio_button">\u0020\u0020Light</string>
+    <string name="satellite_map_style_radio_button">\u0020\u0020Satellite</string>
+    <string name="hybrid_map_style_radio_button">\u0020\u0020Hybrid</string>
+    <string name="imperial_units_radio_button">\u0020\u0020Imperial (miles)</string>
+    <string name="metric_units_radio_button">\u0020\u0020Metric (kilometers)</string>
+
+    <!-- TextViews -->
+    <string name="distance_title_text">Distance</string>
+    <string name="current_speed_title_text">Current Speed</string>
+    <string name="average_speed_title_text">Average Speed</string>
+    <string name="default_timer_text">00:00</string>
+    <string name="autopaused_text">AUTOPAUSED</string>
+    <string name="manually_paused_text">STOPPED</string>
+    <string name="default_distance_text">0.00</string>
+    <string name="no_ride_data_available">- - -</string>
+    <string name="no_ride_data_available_text">No ride data available</string>
+    <string name="imperial_distance_units">miles</string>
+    <string name="imperial_speed_units">mph</string>
+    <string name="metric_distance_units">kilometers</string>
+    <string name="metric_speed_units">kph</string>
+    <string name="finding_location_message">FINDING LOCATION</string>
+    <string name="refining_location_message">IMPROVING ACCURACY</string>
+    <string name="period">.</string>
+    <string name="gps_found">LOCATION FOUND</string>
+    <string name="map_style_title">Map Style</string>
+    <string name="distance_units_title">Distance Units</string>
+    <string name="company_name_attribution">by Jantz Technologies</string>
+    <string name="tap_to_continue">Tap anywhere to continue</string>
+    <string name="elevation_gain">Elevation Gain</string>
+    <string name="elevation_loss">Elevation Loss</string>
+    <string name="speed_shading_explanation_red">RED = FAST</string>
+    <string name="speed_shading_explanation_purple">PURPLE = SLOW</string>
+
+    <!-- Toolbar titles -->
+    <string name="past_rides_title">Home</string>
+    <string name="settings_title">Settings</string>
+    <string name="statistics_title">Statistics</string>
+    <string name="about_title">About / FAQ</string>
+
+    <!-- File names -->
+    <string name="ride_folder_prefix">ride_folder_</string>
+    <string name="ride_stats_filename">ride_statistics</string>
+    <string name="all_locations_filename">all_locations</string>
+    <string name="accepted_locations_filename">accepted_locations</string>
+    <string name="manual_pause_indices_all_locations_filename">manual_pause_indices_all_locations</string>
+    <string name="manual_pause_indices_accepted_locations_filename">manual_pause_indices_accepted_locations</string>
+    <string name="route_thumbnail_filename">route_thumbnail</string>
+
+    <string name="settings_folder_name">user_settings</string>
+    <string name="autopause_setting_filename">autopause_setting</string>
+    <string name="keep_screen_on_setting_filename">keep_screen_on_setting</string>
+    <string name="map_type_setting_filename">map_type_setting</string>
+    <string name="distance_units_setting_filename">distance_units_setting</string>
+    <string name="last_launch_timestamp_filename">last_launch_timestamp</string>
+
+    <!-- intent extra keys -->
+    <string name="ride_folder_name">ride folder name</string>
+    <string name="enable_back_button">enable back button</string>
+    <string name="route_preview">Route preview</string>
+    <string name="settings">settings</string>
+    <string name="stats_over_time">stats over time</string>
+
+    <!-- GraphView custom attributes (axis labels and titles) -->
+    <string name="distance_graph_title">Distance</string>
+    <string name="speed_graph_title">Speed</string>
+    <string name="elevation_graph_title">Elevation</string>
+    <string name="time_graph_title">Time</string>
+    <string name="cumulative_distance_graph_title">Cumulative Distance</string>
+    <string name="imperial_distance_units_parenthesized">\u0020(mi)</string>
+    <string name="imperial_speed_units_parenthesized">\u0020(mph)</string>
+    <string name="imperial_elevation_units_parenthesized">\u0020(ft)</string>
+    <string name="metric_distance_units_parenthesized">\u0020(km)</string>
+    <string name="metric_speed_units_parenthesized">\u0020(kph)</string>
+    <string name="metric_elevation_units_parenthesized">\u0020(m)</string>
+    <string name="day_units_parenthesized">\u0020(days)</string>
+
+    <!-- statistics activity tabs -->
+    <string name="tab_text_week">Last 7 Days</string>
+    <string name="tab_text_month">Last 30 Days</string>
+    <string name="tab_text_year">Last 365 Days</string>
+    <string name="tab_text_full">Full History</string>
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="action_settings">Settings</string>
+
+    <!-- FAQ / About activity questions and answers -->
+    <string name="faq_question_1">What does Ride do and how does it work?</string>
+    <string name="faq_answer_1">Ride uses data from satellites, cell towers, and nearby wifi signals
+        to track your location during bike rides. These data are then analyzed to provide useful
+        analytics to track your performance over time.</string>
+    <string name="faq_question_2">What kinds of devices does Ride work on?</string>
+    <string name="faq_answer_2">Ride is programmed to work on all smartphones that run Android 5.0
+        (Lollipop) or higher. It is not compatible with Android wearOS (smartwatches) or Apple products.</string>
+    <string name="faq_question_3">Can Ride be used to track activities other than biking?</string>
+    <string name="faq_answer_3">Absolutely. Though the app is marketed towards cyclists, it is capable
+        of tracking exercise data across a wide range of speeds, from a stroll to beyond highway speeds.</string>
+    <string name="faq_question_4">How accurate are location data?</string>
+    <string name="faq_answer_4">"The short answer is \"typically within several meters\". However, there is "
+        "variation in location accuracy that hinges on several factors. First, different devices may vary in their "
+        "location accuracy. Second, physical obstructions wreak havoc on your phone's ability to receive and process "
+        "satellite signals. Therefore, this app is not conducive to indoor activity tracking or even certain outdoor "
+        "activities such as spelunking, scuba diving, digging a hole to China, etc."</string>
+    <string name="faq_question_5">I\'m having issues recording rides. What should I do?</string>
+    <string name="faq_answer_5">"There are two main issues that often hinder Ride\'s "
+        "performance during recording sessions. First, users sometimes leave their phones on power saving "
+        "mode, which saves power by restricting background tasks such as satellite signal processing. As "
+        "a result, the phone stops calculating its location when you turn off the screen, ruining the "
+        "recording session. Second, on more recent Android OS versions, users are allowed to set background "
+        "usage limits for different apps. To ensure that you didn\'t inadvertently limit Ride's background "
+        "usage, go to Settings and search \"sleeping apps\". Make sure that Ride is not in the list of sleeping "
+        "apps or deep sleeping apps, and the operating system will be far less likely to kill your "
+        "recording session."</string>
+    <string name="faq_question_6">How private is my data? Do you sell it to anyone?</string>
+    <string name="faq_answer_6"> Satellite signals are terrible for elevation calculations, so the app
+        sends the coordinates of points along your ride to a trusted open-source elevation database, opentopodata.org,
+        to ask for the accompanying elevation data for each location. Elevation gain/loss statistics can then
+        be calculated using this information. However, this is the only external use of your personal data and
+        its only purpose is to provide you with more accurate ride statistics. Jantz Technologies does
+        not store, track, sell, or profit from ANY of your data in any way.</string>
+    <string name="faq_question_7">Who created this app?</string>
+    <string name="faq_answer_7">Ride was programmed by David Jantz in 2021 with full copyright protections.</string>
+    <string name="faq_question_8">I love Ride! How can I support your work?</string>
+    <string name="faq_answer_8">Whether you love Ride as is or have suggestions for improvement, your
+       feedback is valuable. If you find a glitch in the performance of the app, that is an especially
+       high priority for me! Feel free to leave kudos or advice in a review on the Google Play Store.
+       I DO read reviews :)</string>
+    <string name="faq_question_9">I have a question that isn\'t answered on this page. Where can I
+       find answers?</string>
+    <string name="faq_answer_9">Send an email to jantztechnologies@gmail.com. Do keep in mind that this
+        app is a passion project unsupported by ad revenue. As such, I may not get back to you in a timely
+        manner.</string>
+
+</resources>

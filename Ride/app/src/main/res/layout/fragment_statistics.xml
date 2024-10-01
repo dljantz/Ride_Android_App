@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StatisticsFragment" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_statistics_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/numberOfRidesTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Number of Rides"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/numberOfRidesValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/no_ride_data_available"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberOfRidesTitleTextView" />
+
+        <TextView
+            android:id="@+id/totalDistanceTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Distance"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toTopOf="@+id/numberOfRidesTitleTextView" />
+
+        <TextView
+            android:id="@+id/totalDistanceValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/no_ride_data_available"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/totalDistanceTitleTextView" />
+
+        <View
+            android:id="@+id/gradientLine1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/_purple_to_red_gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberOfRidesValueTextView" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="-16dp"
+            android:layout_marginStart="-16dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/gradientLine1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toTopOf="@+id/gradientLine1" />
+
+        <View
+            android:id="@+id/verticalLine1"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/pink"
+            app:layout_constraintBottom_toTopOf="@+id/gradientLine1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/totalTimeTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Total Time"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gradientLine1" />
+
+        <TextView
+            android:id="@+id/totalRideTimeValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/no_ride_data_available"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/totalTimeTitleTextView" />
+
+        <TextView
+            android:id="@+id/averageRideDistanceTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Average Ride Distance"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/gradientLine1" />
+
+        <TextView
+            android:id="@+id/averageRideDistanceValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/no_ride_data_available"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/averageRideDistanceTitleTextView" />
+
+        <View
+            android:id="@+id/gradientLine2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/_purple_to_red_gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/totalRideTimeValueTextView" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="-16dp"
+            android:layout_marginStart="-16dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/gradientLine2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toTopOf="@+id/gradientLine2" />
+
+        <View
+            android:id="@+id/verticalLine2"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/pink"
+            app:layout_constraintBottom_toTopOf="@+id/gradientLine2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/gradientLine1" />
+
+        <TextView
+            android:id="@+id/averageRideDurationTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Average Ride Duration"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gradientLine2" />
+
+        <TextView
+            android:id="@+id/averageRideDurationValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/no_ride_data_available"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/averageRideDurationTitleTextView" />
+
+        <TextView
+            android:id="@+id/averageRideSpeedTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Average Ride Speed"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/gradientLine2" />
+
+        <TextView
+            android:id="@+id/averageRideSpeedValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/no_ride_data_available"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/averageRideSpeedTitleTextView" />
+
+        <View
+            android:id="@+id/gradientLine3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/_purple_to_red_gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/averageRideDurationValueTextView" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="-16dp"
+            android:layout_marginStart="-16dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/gradientLine3"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toTopOf="@+id/gradientLine3" />
+
+        <View
+            android:id="@+id/verticalLine3"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/pink"
+            app:layout_constraintBottom_toTopOf="@+id/gradientLine3"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/gradientLine2" />
+
+        <TextView
+            android:id="@+id/fastestRideTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Fastest Ride"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gradientLine3" />
+
+        <TextView
+            android:id="@+id/fastestRideValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/no_ride_data_available"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fastestRideTitleTextView" />
+
+        <TextView
+            android:id="@+id/longestRideTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Longest Ride"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/gradientLine3" />
+
+        <TextView
+            android:id="@+id/longestRideValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/no_ride_data_available"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/longestRideTitleTextView" />
+
+        <View
+            android:id="@+id/gradientLine4"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/_purple_to_red_gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fastestRideValueTextView" />
+
+        <View
+            android:id="@+id/bottomBlackRectangle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="-16dp"
+            android:layout_marginStart="-16dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/gradientLine4"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toTopOf="@+id/gradientLine4" />
+
+        <View
+            android:id="@+id/verticalLine4"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/pink"
+            app:layout_constraintBottom_toTopOf="@+id/gradientLine4"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/gradientLine3" />
+
+        <TextView
+            android:id="@+id/sevenDayDistanceRecordTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="7 Day Distance Record"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gradientLine4" />
+
+        <TextView
+            android:id="@+id/sevenDayDistanceRecordValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/no_ride_data_available"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sevenDayDistanceRecordTitleTextView" />
+
+        <TextView
+            android:id="@+id/thirtyDayDistanceRecordTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="30 Day Distance Record"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/gradientLine4" />
+
+        <TextView
+            android:id="@+id/thirtyDayDistanceRecordValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/no_ride_data_available"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/thirtyDayDistanceRecordTitleTextView" />
+
+        <View
+            android:id="@+id/verticalLine5"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/pink"
+            app:layout_constraintTop_toBottomOf="@+id/gradientLine4"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/sevenDayDistanceRecordValueTextView" />
+
+        <com.jantztechnologies.ride.GraphView
+            android:id="@+id/cumulativeDistanceGraph"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sevenDayDistanceRecordValueTextView"
+            custom:title="@string/cumulative_distance_graph_title"
+            custom:xAxisLabel="@string/time_graph_title"
+            custom:themeColor="@color/purple"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+

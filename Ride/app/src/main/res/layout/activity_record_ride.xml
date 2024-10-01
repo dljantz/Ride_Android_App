@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:visibility="visible"
+    tools:context=".RecordRideActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_view_ride"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/timerTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/default_timer_text"
+        android:gravity="center"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toolbar_view_ride"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_view_ride"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/rideDistanceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_distance_text"
+        android:gravity="center"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/distanceTitle" />
+
+    <TextView
+        android:id="@+id/currentSpeedValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_ride_data_available"
+        android:gravity="center"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/divider1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentSpeedTitle" />
+
+    <TextView
+        android:id="@+id/averageSpeedValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_ride_data_available"
+        android:gravity="center"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/startResumeTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/averageSpeedTitle" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <View
+        android:id="@+id/divider0"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/_purple_to_red_gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/currentSpeedTitle"/>
+
+    <View
+        android:id="@+id/gps_background_color"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/red"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/acquiringGPSTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/acquiringGPSTextView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/acquiringGPSTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/finding_location_message"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_view_ride" />
+
+    <TextView
+        android:id="@+id/dot1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/period"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/acquiringGPSTextView"
+        app:layout_constraintStart_toEndOf="@+id/acquiringGPSTextView" />
+
+    <TextView
+        android:id="@+id/dot2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/period"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/acquiringGPSTextView"
+        app:layout_constraintStart_toEndOf="@+id/dot1" />
+
+    <TextView
+        android:id="@+id/dot3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/period"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/acquiringGPSTextView"
+        app:layout_constraintStart_toEndOf="@+id/dot2" />
+
+    <TextView
+        android:id="@+id/currentSpeedTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/current_speed_title_text"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gps_background_color" />
+
+    <TextView
+        android:id="@+id/distanceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/distance_title_text"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+    <TextView
+        android:id="@+id/averageSpeedTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/average_speed_title_text"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+    <TextView
+        android:id="@+id/autoPauseTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/purple"
+        android:text="@string/autopaused_text"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timerTextView" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/_purple_to_red_gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autoPauseTextView"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"/>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/_purple_to_red_gradient"
+        app:layout_constraintBottom_toTopOf="@+id/startResumeTextView"
+        app:layout_constraintTop_toBottomOf="@+id/divider1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- StateListAnimator is android's attempt at a nice user experience
+    that really fucked up my attempts to control button z order for a while...
+    now set to null for both buttons.-->
+    <TextView
+        android:id="@+id/stopFinishTextView"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/red"
+        android:clickable="false"
+        android:focusable="false"
+        android:foreground="@drawable/_ripple_rectangular_buttons"
+        android:gravity="center_horizontal|center_vertical"
+        android:stateListAnimator="@null"
+        android:text="@string/stop_button"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline5" />
+
+    <TextView
+        android:id="@+id/startResumeTextView"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/purple"
+        android:clickable="false"
+        android:focusable="false"
+        android:foreground="@drawable/_ripple_rectangular_buttons"
+        android:gravity="center_horizontal|center_vertical"
+        android:stateListAnimator="@null"
+        android:text="@string/start_button"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

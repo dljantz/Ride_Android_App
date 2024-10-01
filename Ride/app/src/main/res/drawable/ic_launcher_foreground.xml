@@ -1,0 +1,44 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#FF000000"
+        android:fillType="nonZero"
+        android:pathData=
+            "M 37, 38
+            L 48, 31
+            L 75, 37
+            L 64, 44
+            L 53.5, 42
+            L 62.5, 51
+            L 51, 63
+            L 51, 51 Z
+
+            M 34.5, 73
+            A 9, 13  30  1, 1  34.51, 73 Z
+
+            M 67.5, 73
+            A 9, 13  30  1, 1  67.51, 73 Z"
+        android:strokeWidth="0"
+        android:strokeColor="#00000000" />
+</vector>
+
+
+    <!-- path data adhering strictly to Autodesk measurements below:
+
+                "M40.500, 37.911
+                L71.357, 37.911
+                L55.644, 43.938
+                L59.786, 49.715
+                L50.621, 61.714
+                L52.696, 49.715 Z
+
+                M36.643, 70.200
+                A11.572, 11.572  0  1, 1  36.644, 70.200 Z
+
+                M71.357, 70.200
+                A11.572, 11.572  0  1, 1  71.358, 70.200 Z"
+    -->

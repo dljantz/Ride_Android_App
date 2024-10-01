@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraint_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:visibility="visible"
+    tools:context=".ViewRideActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_view_ride"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/_purple_to_red_gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/viewRideScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_view_ride"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/gradientBox1"
+                android:layout_width="0dp"
+                android:layout_height="400dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/_purple_to_red_gradient"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/blackBox1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/gradientBox1"
+                app:layout_constraintEnd_toEndOf="@+id/gradientBox1"
+                app:layout_constraintStart_toStartOf="@+id/gradientBox1"
+                app:layout_constraintTop_toTopOf="@+id/gradientBox1" />
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/ride_map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/blackBox1"
+                app:layout_constraintEnd_toEndOf="@+id/blackBox1"
+                app:layout_constraintStart_toStartOf="@+id/blackBox1"
+                app:layout_constraintTop_toTopOf="@+id/blackBox1"
+                tools:context=".ViewRideActivity" />
+
+            <TextView
+                android:id="@+id/speedShadingExplanationRedTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/speed_shading_explanation_red"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/red"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="@id/ride_map"
+                app:layout_constraintEnd_toEndOf="@id/ride_map"
+                app:layout_constraintTop_toTopOf="@id/ride_map"/>
+
+            <TextView
+                android:id="@+id/speedShadingExplanationPurpleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/speed_shading_explanation_purple"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="@id/ride_map"
+                app:layout_constraintEnd_toEndOf="@id/ride_map"
+                app:layout_constraintTop_toBottomOf="@id/speedShadingExplanationRedTextView"/>
+
+            <ImageView
+                android:id="@+id/recenterImageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foregroundGravity="center"
+                android:foreground="@drawable/_ripple_record_ride"
+                app:layout_constraintEnd_toEndOf="@+id/ride_map"
+                app:layout_constraintTop_toTopOf="@+id/ride_map"
+                app:srcCompat="@drawable/_view_ride_home_button" />
+
+    <!-- Purpose: Allows map movement to be prioritized over scrolling when touch
+        events are detected within the bounds of this box. See ViewRideActivty for the deets. -->
+            <View
+                android:id="@+id/transparentView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ride_map"
+                app:layout_constraintEnd_toEndOf="@+id/ride_map"
+                app:layout_constraintStart_toStartOf="@+id/ride_map"
+                app:layout_constraintTop_toTopOf="@+id/ride_map" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/totalDistanceTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Distance"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gradientBox1" />
+
+            <TextView
+                android:id="@+id/totalDistanceValueTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/no_ride_data_available"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/totalDistanceTitleTextView" />
+
+            <TextView
+                android:id="@+id/totalRideDurationTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Time"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toBottomOf="@+id/gradientBox1" />
+
+            <TextView
+                android:id="@+id/totalRideDurationValueTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/no_ride_data_available"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toBottomOf="@+id/totalRideDurationTitleTextView" />
+
+            <TextView
+                android:id="@+id/elevationLossTitleTextView"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="@string/elevation_loss"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toBottomOf="@+id/gradientLine2" />
+
+            <TextView
+                android:id="@+id/elevationLossValueTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/no_ride_data_available"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toBottomOf="@+id/elevationLossTitleTextView" />
+
+            <TextView
+                android:id="@+id/elevationGainTitleTextView"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="@string/elevation_gain"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gradientLine2" />
+
+            <TextView
+                android:id="@+id/elevationGainValueTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/no_ride_data_available"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@id/guideline7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/elevationGainTitleTextView" />
+
+            <TextView
+                android:id="@+id/maxSpeedTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Max speed"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toBottomOf="@+id/gradientLine1" />
+
+            <TextView
+                android:id="@+id/maxSpeedValueTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/no_ride_data_available"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toBottomOf="@+id/maxSpeedTitleTextView" />
+
+            <TextView
+                android:id="@+id/totalAverageSpeedTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Average speed"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gradientLine1" />
+
+            <TextView
+                android:id="@+id/totalAverageSpeedValueTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/no_ride_data_available"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@id/guideline7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/totalAverageSpeedTitleTextView" />
+
+            <View
+                android:id="@+id/gradientLine1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/_purple_to_red_gradient"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/totalDistanceValueTextView" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="-16dp"
+                android:layout_marginEnd="-16dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/gradientLine1"
+                app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@+id/gradientLine1" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/pink"
+                app:layout_constraintBottom_toTopOf="@+id/gradientLine1"
+                app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toBottomOf="@+id/gradientBox1" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/pink"
+                app:layout_constraintBottom_toTopOf="@+id/gradientLine2"
+                app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toBottomOf="@+id/gradientLine1" />
+
+            <View
+                android:id="@+id/gradientLine2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/_purple_to_red_gradient"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/totalAverageSpeedValueTextView" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="-16dp"
+                android:layout_marginEnd="-16dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/gradientLine2"
+                app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@+id/gradientLine2" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/pink"
+                app:layout_constraintBottom_toBottomOf="@+id/elevationGainValueTextView"
+                app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@+id/gradientLine2" />
+
+            <com.jantztechnologies.ride.GraphView
+                android:id="@+id/speedGraph"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/elevationGainValueTextView"
+                custom:themeColor="@color/red"
+                custom:title="@string/speed_graph_title"
+                custom:xAxisLabel="@string/distance_graph_title" />
+
+            <com.jantztechnologies.ride.GraphView
+                android:id="@+id/elevationGraph"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/speedGraph"
+                custom:themeColor="@color/purple"
+                custom:title="@string/elevation_graph_title"
+                custom:xAxisLabel="@string/distance_graph_title" />
+
+            <TextView
+                android:id="@+id/exitViewRideTextView"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/purple"
+                android:clickable="false"
+                android:focusable="false"
+                android:foreground="@drawable/_ripple_rectangular_buttons"
+                android:gravity="center_horizontal|center_vertical"
+                android:stateListAnimator="@null"
+                android:text="@string/exit_view_ride_button"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@id/deleteRideTextView" />
+
+            <TextView
+                android:id="@+id/deleteRideTextView"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/red"
+                android:clickable="false"
+                android:focusable="false"
+                android:foreground="@drawable/_ripple_rectangular_buttons"
+                android:gravity="center_horizontal|center_vertical"
+                android:stateListAnimator="@null"
+                android:text="@string/delete_ride_button"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/elevationGraph" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--
+
+    <Button
+        android:id="@+id/delete_ride_button"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="@color/red"
+        android:onClick="discardRideData"
+        android:stateListAnimator="@null"
+        android:text="@string/delete_ride_button"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/exit_view_ride_button"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/purple"
+        android:onClick="startMainActivity"
+        android:stateListAnimator="@null"
+        android:text="@string/exit_view_ride_button"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline7" />
+
+-->

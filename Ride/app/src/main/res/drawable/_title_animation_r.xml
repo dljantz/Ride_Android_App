@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+
+    <!-- top part of R -->
+    <item android:drawable="@drawable/frame_empty" android:duration="50" />
+    <item android:drawable="@drawable/frame000" android:duration="50" />
+    <item android:drawable="@drawable/frame001" android:duration="46" />
+    <item android:drawable="@drawable/frame002" android:duration="42" />
+    <item android:drawable="@drawable/frame003" android:duration="38" />
+    <item android:drawable="@drawable/frame004" android:duration="34" />
+    <item android:drawable="@drawable/frame005" android:duration="30" />
+    <item android:drawable="@drawable/frame006" android:duration="26" />
+    <item android:drawable="@drawable/frame007" android:duration="22" />
+    <item android:drawable="@drawable/frame008" android:duration="18" />
+    <item android:drawable="@drawable/frame009" android:duration="14" />
+    <!-- <item android:drawable="@drawable/frame010" android:duration="10" /> -->
+    <item android:drawable="@drawable/frame011" android:duration="10" />
+    <item android:drawable="@drawable/frame012" android:duration="10" />
+    <!-- <item android:drawable="@drawable/frame013" android:duration="10" /> -->
+    <item android:drawable="@drawable/frame014" android:duration="10" />
+    <item android:drawable="@drawable/frame015" android:duration="14" />
+    <item android:drawable="@drawable/frame016" android:duration="18" />
+    <item android:drawable="@drawable/frame017" android:duration="22" />
+    <item android:drawable="@drawable/frame018" android:duration="26" />
+    <item android:drawable="@drawable/frame019" android:duration="30" />
+    <item android:drawable="@drawable/frame020" android:duration="34" />
+    <item android:drawable="@drawable/frame021" android:duration="38" />
+    <item android:drawable="@drawable/frame022" android:duration="42" />
+    <item android:drawable="@drawable/frame023" android:duration="46" />
+    <item android:drawable="@drawable/frame024" android:duration="50" />
+
+    <!-- left leg of R -->
+    <item android:drawable="@drawable/frame025" android:duration="50" />
+    <item android:drawable="@drawable/frame026" android:duration="46" />
+    <item android:drawable="@drawable/frame027" android:duration="42" />
+    <item android:drawable="@drawable/frame028" android:duration="38" />
+    <item android:drawable="@drawable/frame029" android:duration="34" />
+    <item android:drawable="@drawable/frame030" android:duration="30" />
+    <item android:drawable="@drawable/frame031" android:duration="26" />
+    <item android:drawable="@drawable/frame032" android:duration="22" />
+    <item android:drawable="@drawable/frame033" android:duration="18" />
+    <item android:drawable="@drawable/frame034" android:duration="14" />
+    <item android:drawable="@drawable/frame035" android:duration="14" />
+    <item android:drawable="@drawable/frame036" android:duration="18" />
+    <item android:drawable="@drawable/frame037" android:duration="22" />
+    <item android:drawable="@drawable/frame038" android:duration="26" />
+    <item android:drawable="@drawable/frame039" android:duration="30" />
+    <item android:drawable="@drawable/frame040" android:duration="34" />
+    <item android:drawable="@drawable/frame041" android:duration="38" />
+    <item android:drawable="@drawable/frame042" android:duration="42" />
+    <item android:drawable="@drawable/frame043" android:duration="46" />
+    <item android:drawable="@drawable/frame044" android:duration="50" />
+
+    <!-- right leg of R -->
+    <item android:drawable="@drawable/frame045" android:duration="50" />
+    <item android:drawable="@drawable/frame046" android:duration="46" />
+    <item android:drawable="@drawable/frame047" android:duration="42" />
+    <item android:drawable="@drawable/frame048" android:duration="38" />
+    <item android:drawable="@drawable/frame049" android:duration="34" />
+    <item android:drawable="@drawable/frame050" android:duration="30" />
+    <item android:drawable="@drawable/frame051" android:duration="26" />
+    <item android:drawable="@drawable/frame052" android:duration="22" />
+    <item android:drawable="@drawable/frame053" android:duration="18" />
+    <item android:drawable="@drawable/frame054" android:duration="18" />
+    <item android:drawable="@drawable/frame055" android:duration="22" />
+    <item android:drawable="@drawable/frame056" android:duration="26" />
+    <item android:drawable="@drawable/frame057" android:duration="30" />
+    <item android:drawable="@drawable/frame058" android:duration="34" />
+    <item android:drawable="@drawable/frame059" android:duration="38" />
+    <item android:drawable="@drawable/frame060" android:duration="42" />
+    <item android:drawable="@drawable/frame061" android:duration="46" />
+    <item android:drawable="@drawable/frame062" android:duration="50" />
+
+    <!-- lower the crotch -->
+    <item android:drawable="@drawable/frame063" android:duration="50" />
+    <item android:drawable="@drawable/frame064" android:duration="46" />
+    <item android:drawable="@drawable/frame065" android:duration="42" />
+    <item android:drawable="@drawable/frame066" android:duration="42" />
+    <item android:drawable="@drawable/frame067" android:duration="46" />
+    <item android:drawable="@drawable/frame068" android:duration="50" />
+
+</animation-list>

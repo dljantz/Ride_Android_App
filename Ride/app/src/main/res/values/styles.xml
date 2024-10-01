@@ -1,0 +1,20 @@
+<!-- styles and themes seem to mean the same thing-->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Ride" parent="Theme.MaterialComponents">
+        <!-- text color for regular textView objects is tertiary for some *#@&!%ing reason-->
+        <item name="android:textColorTertiary">@color/white</item>
+        <!-- some day I'm going to figure out how to change the default color of buttons...-->
+        <!-- below changes "on" color for switchCompat to purple -->
+        <item name="colorAccent">@color/purple</item>
+
+        <item name="android:colorBackground">@color/black</item>
+        <!-- remove default action bar -->
+        <item name="windowNoTitle">true</item>
+
+    </style>
+
+
+
+</resources>

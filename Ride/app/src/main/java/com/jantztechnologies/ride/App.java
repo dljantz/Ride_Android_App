@@ -14,6 +14,8 @@ public class App extends Application {
     // TODO: plug memory leaks in general using Profiler... I think there are some lazy things going
     //      on with static variables etc.
 
+    // This is a test comment on 10/4/24 to make sure version control is working from within android studio.
+
     public static final String CHANNEL_ID = "foregroundServiceChannel";
     public static final String RECORDING_ACTIVITY_MESSAGE_ID = "notificationDisplay";
 

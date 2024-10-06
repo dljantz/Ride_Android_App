@@ -354,7 +354,7 @@
                 app:layout_constraintStart_toStartOf="@+id/guideline7"
                 app:layout_constraintTop_toTopOf="@+id/gradientLine2" />
 
-            <com.jantztechnologies.ride.GraphView
+            <com.jantztechnologies.ride2.GraphView
                 android:id="@+id/speedGraph"
                 android:layout_width="0dp"
                 android:layout_height="300dp"
@@ -367,7 +367,7 @@
                 custom:title="@string/speed_graph_title"
                 custom:xAxisLabel="@string/distance_graph_title" />
 
-            <com.jantztechnologies.ride.GraphView
+            <com.jantztechnologies.ride2.GraphView
                 android:id="@+id/elevationGraph"
                 android:layout_width="0dp"
                 android:layout_height="300dp"

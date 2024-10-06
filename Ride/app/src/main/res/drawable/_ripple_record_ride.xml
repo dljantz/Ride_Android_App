@@ -2,4 +2,4 @@
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
     android:color="#40FFFFFF"
     android:radius="50dp" />
-<!-- hard coded to equal the radius of the record ride button -->
+<!-- hard coded to equal the radius of the record ride2 button -->

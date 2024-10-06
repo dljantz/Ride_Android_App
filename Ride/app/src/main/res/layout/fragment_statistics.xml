@@ -392,7 +392,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline_statistics_vertical"
             app:layout_constraintBottom_toBottomOf="@+id/sevenDayDistanceRecordValueTextView" />
 
-        <com.jantztechnologies.ride.GraphView
+        <com.jantztechnologies.ride2.GraphView
             android:id="@+id/cumulativeDistanceGraph"
             android:layout_width="0dp"
             android:layout_height="300dp"

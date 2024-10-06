@@ -3,15 +3,14 @@ plugins {
 }
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion "30.0.3"
+    compileSdk 34
 
     defaultConfig {
-        applicationId "com.jantztechnologies.ride"
+        applicationId "com.jantztechnologies.ride2"
         minSdkVersion 21
-        targetSdkVersion 33
-        versionCode 10
-        versionName "1.10"
+        targetSdkVersion 35
+        versionCode 11
+        versionName "2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

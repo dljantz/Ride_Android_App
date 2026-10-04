@@ -170,10 +170,18 @@ public class ViewRideActivity extends AppCompatActivity implements OnMapReadyCal
 
         redrawElevationGraph(false);
 
+        if (acceptedLocations == null || acceptedLocations.isEmpty()) {
+            Toast.makeText(this, "No GPS track points recorded for this ride", Toast.LENGTH_SHORT).show();
+        }
+
         // Map setup
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.ride_map);
+        android.util.Log.d("ViewRideActivity", "mapFragment found: " + mapFragment);
         if (mapFragment != null) {
+            android.util.Log.d("ViewRideActivity", "Calling getMapAsync(this)...");
             mapFragment.getMapAsync(this);
+        } else {
+            android.util.Log.e("ViewRideActivity", "ERROR: mapFragment is null!");
         }
 
         binding.rideMap.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -259,6 +267,7 @@ public class ViewRideActivity extends AppCompatActivity implements OnMapReadyCal
 
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
+        android.util.Log.d("ViewRideActivity", "onMapReady called! googleMap=" + googleMap + ", acceptedLocations=" + (acceptedLocations != null ? acceptedLocations.size() : "null"));
         MapIllustrator mapIllustrator = new MapIllustrator(
                 this,
                 mapWidthPx,

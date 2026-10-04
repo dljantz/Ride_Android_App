@@ -39,6 +39,9 @@ public class App extends Application {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             createNotificationChannel();
         }
+        com.google.android.gms.maps.MapsInitializer.initialize(this, com.google.android.gms.maps.MapsInitializer.Renderer.LEGACY, renderer -> {
+            android.util.Log.d("App", "Google Maps initialized with renderer: " + renderer.name());
+        });
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)

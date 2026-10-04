@@ -2,6 +2,7 @@ package com.jantztechnologies.ride2;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -64,14 +65,17 @@ public class MapIllustrator {
         int preferredMapType = PreferencesManager.getInstance(context).getMapStyle();
 
         if (preferredMapType == App.MAP_STYLE_LIGHT) {
-            googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.map_style_light));
+            googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            boolean success = googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.map_style_light));
+            Log.d("MapIllustrator", "Applied light map style, success=" + success);
         } else if (preferredMapType == App.MAP_STYLE_SATELLITE) {
             googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         } else if (preferredMapType == App.MAP_STYLE_HYBRID) {
             googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         } else { // default to dark in the case of file i/o error
-            googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.map_style_dark));
-            System.out.println("map styled");
+            googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            boolean success = googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.map_style_dark));
+            Log.d("MapIllustrator", "Applied dark map style, success=" + success);
         }
     }
 
@@ -132,6 +136,14 @@ public class MapIllustrator {
         }
 
         latRange = maxLat - minLat;
+
+        // If the route has virtually no spread (single point or stationary), center with standard zoom
+        if (latRange < 0.0001 && longRange < 0.0001) {
+            recenter = CameraUpdateFactory.newLatLngZoom(new LatLng(minLat, minLong), 16f);
+            googleMap.moveCamera(recenter);
+            return;
+        }
+
         maxLat += latRange * zoomOut;
         minLat -= latRange * zoomOut;
 
@@ -167,6 +179,8 @@ public class MapIllustrator {
         double currentColorGradientMultiplier = 0.0; // only initialized because Android Studio complained, default value should never be used
         boolean pauseEventDetected = false;
 
+        float strokeWidth = Math.max(8.0f, mapHeightPx / (float) 80.0);
+
         try {
             // There were two options -- draw the proper speed color ahead or behind the point where
             //      the speed was measured. I chose the more anticipatory one (drawn behind) as it's more
@@ -175,14 +189,15 @@ public class MapIllustrator {
             for (int i = 1; i < acceptedLocations.size(); i++) {
                 double nextColorGradientMultiplier = getSpeedColorGradientMultiplier(acceptedLocations.get(i), numSpeedColorCategories);
 
-                if (manualPauseIndicesAcceptedLocations.contains(i - 1)) {
-                    pauseEventDetected = true; // notify the next iteration of the for loop to create a new polyline
+                if (manualPauseIndicesAcceptedLocations != null && manualPauseIndicesAcceptedLocations.contains(i - 1)) {
+                    pauseEventDetected = true; // notify next polyline to start fresh
                 }
+
                 // if it's right after a pause event OR this is the first location in the list OR the raw
                 //      speed of this location object falls outside of the quartile / quintile / whatever
                 //      of the last location, make a new polylineOptions object and add this location as the
                 //      first point. Also add this polyline to the ArrayList of polylines.
-                else if (i == 1 ||
+                if (i == 1 ||
                     pauseEventDetected ||
                     nextColorGradientMultiplier != currentColorGradientMultiplier) {
 
@@ -192,7 +207,7 @@ public class MapIllustrator {
                     polyline.startCap(new ButtCap());
                     polyline.endCap(new RoundCap());
                     polyline.jointType(JointType.ROUND);
-                    polyline.width(mapHeightPx / (float) 80.0); // make this depend on a dp value instead of a px value so the density of the screen has no impact on width
+                    polyline.width(strokeWidth);
                     int adjustmentFromPurple = (int) Math.round(gradientRangeInt * currentColorGradientMultiplier); // purple is the default color
                     polyline.color(Color.argb(255,
                             minColorInt + adjustmentFromPurple,
@@ -259,9 +274,7 @@ temporarily(?) disabling this to try to get route line gradient working
     }
 
     public void drawPolylines() {
-        ///////////////for (PolylineOptions polyline : allLocationsPolylines) googleMap.addPolyline(polyline);
         for (PolylineOptions polyline : acceptedLocationsPolylines) googleMap.addPolyline(polyline);
-        // todo: delete print statement below
-        System.out.println("The number of polylines is: " + acceptedLocationsPolylines.size());
+        Log.d("MapIllustrator", "drawPolylines: number of polylines is " + (acceptedLocationsPolylines != null ? acceptedLocationsPolylines.size() : 0));
     }
 }
